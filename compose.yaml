@@ -1,0 +1,12 @@
+services:
+ backend:
+   build: ./Backend
+   container_name: backend
+   ports:
+     - "8000:8000"
+   environment:
+     SECRET_KEY: ${DJANGO_SECRET_KEY}
+     DEBUG: ${DJANGO_DEBUG}
+ 
+   env_file:
+     - .env
