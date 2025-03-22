@@ -17,11 +17,11 @@ class SignupView(APIView):
             email = serializer.validated_data['email']
 
             # 🚨 Check if username already exists
-            if User.objects.filter(username=username).exists():
+            if User.objects.filter(username__iexact=username).exists():
                 return Response({'error': 'Username is already taken. Please choose another one.'}, status=status.HTTP_400_BAD_REQUEST)
 
             # 🚨 Check if email already exists
-            if User.objects.filter(email=email).exists():
+            if User.objects.filter(email__iexact=email).exists():
                 return Response({'error': 'An account with this email already exists.'}, status=status.HTTP_400_BAD_REQUEST)
 
             # ✅ Create new user if everything is valid
