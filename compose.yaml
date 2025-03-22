@@ -7,6 +7,17 @@ services:
    environment:
      SECRET_KEY: ${DJANGO_SECRET_KEY}
      DEBUG: ${DJANGO_DEBUG}
- 
+   volumes:
+     - ./Backend:/app
+     - ./Backend/db.sqlite3:/app/db.sqlite3
    env_file:
      - .env
+ frontend:
+    build: ./letterboxd-mini
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    volumes:
+      - ./letterboxd-mini:/app
