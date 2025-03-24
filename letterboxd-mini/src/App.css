@@ -1,0 +1,49 @@
+body {
+  background: #29293d;
+  color: #F05D5E;
+}
+
+.movie-app > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.input-box {
+  background-color: #29293d !important; /* !important to override Bootstrap if needed */
+  color: #2274A5 !important; /* !important to override Bootstrap if needed */
+}
+
+.movie-list-tile{
+  width: 170px !important;
+  height: 250px !important;
+}
+
+.movie-list{
+  margin: 30px 100px 0 100px
+}
+
+
+.image-container {
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  background: #29293d;
+  width: 100%;
+  opacity: 0;
+  bottom: 0;
+  padding: 8px;
+  text-align: center;
+}
+
