@@ -22,7 +22,6 @@ const App = () => {
       const url = `http://www.omdbapi.com/?s=${urlSearch}&apikey=e7203cec`;
       const response = await fetch(url);
       const responseJson = await response.json();
-      console.log(responseJson);
       if(responseJson.Search){
           setMovies(responseJson.Search)
       }

@@ -1,12 +1,21 @@
 import React, {useState} from 'react'
+import axios from 'axios';
 function RegisterComponent() {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleRegister = () => {
-        console.log('Register attempt: ', username, password);
-    }
+    const handleRegister = async (username, email, password) => {
+        const url = `http://0.0.0.0:8000/api/`;
+        try {
+            const response = await axios.post(`${url}/signup`, { username, email, password });
+            console.log('Register attempt: ', response);
+            return response.data;
+        } catch (error) {
+            throw error;
+        }
+    };
+
     return (
         <>
             <button
@@ -27,7 +36,7 @@ function RegisterComponent() {
                                     aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <form onSubmit={handleRegister}>
+                            <form>
                                     <label htmlFor={'username'} className={'form-label'} style={{fontSize: '15px'}}>Username:</label>
                                     <input type={'text'} className={'form-control register-input'} id={'username'} placeholder={'Username'}
                                            value={username} style={{fontSize: '15px'}}
@@ -42,7 +51,7 @@ function RegisterComponent() {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary" >Save</button>
+                            <button type="button" className="btn btn-primary" onClick={() => handleRegister(username, email, password)} >Save</button>
                         </div>
                     </div>
                 </div>
