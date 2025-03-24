@@ -1,6 +1,6 @@
 body {
-  background: #29293d;
-  color: #F05D5E;
+  background: #00001a;
+  color: #bac1b8;
 }
 
 .movie-app > .row {
@@ -9,8 +9,13 @@ body {
 }
 
 .input-box {
-  background-color: #29293d !important; /* !important to override Bootstrap if needed */
+  background-color: #00001a !important; /* !important to override Bootstrap if needed */
   color: #2274A5 !important; /* !important to override Bootstrap if needed */
+}
+
+.input-box::placeholder {
+  color: #9055A2 !important;
+  opacity: 0.6;
 }
 
 .movie-list-tile{
@@ -39,11 +44,82 @@ body {
 
 .overlay {
   position: absolute;
-  background: #29293d;
+  background: #00001a;
   width: 100%;
   opacity: 0;
   bottom: 0;
   padding: 8px;
   text-align: center;
+}
+
+.btn-outline-primary {
+  border-color: #00001a !important; /* !important to override Bootstrap if needed */
+  color: #2274A5 !important; /* !important to override Bootstrap if needed */
+  background-color: transparent;
+  height: 36px;
+  width: 85px;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0;
+}
+
+.btn-outline-secondary {
+  border-color: #ff785a !important; /* !important to override Bootstrap if needed */
+  background-color: transparent;
+  color: #ff785a !important; /* !important to override Bootstrap if needed */
+  height: 36px;
+  width: 85px;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0;
+}
+
+.btn-outline-primary:hover {
+  background-color: #00004d !important;
+}
+
+.modal-content{
+  background: #3d3d5c;
+}
+
+.btn-primary {
+  border-color: #00001a !important; /* !important to override Bootstrap if needed */
+  background-color: #2274A5 !important;
+  height: 36px;
+  width: 85px;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0;
+  :hover {
+    opacity: 0.6;
+  }
+}
+
+.btn-primary:hover {
+  background-color: #164b6a !important;
+}
+
+.btn-secondary {
+  border-color: #00001a !important; /* !important to override Bootstrap if needed */
+  background-color: #ff785a !important;
+  height: 36px;
+  width: 85px;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0;
+}
+
+.btn-secondary:hover {
+  background-color: #991c00 !important;
+}
+
+.register-input {
+  background-color: #3d3d5c !important;
+  color: #bac1b8 !important;
+}
+
+.register-input::placeholder{
+  color: #bac1b8 !important;
+  opacity: 0.35;
 }
 
