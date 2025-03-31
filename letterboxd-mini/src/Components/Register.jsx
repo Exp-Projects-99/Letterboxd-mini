@@ -6,9 +6,9 @@ function RegisterComponent() {
     const [password, setPassword] = useState('');
 
     const handleRegister = async (username, email, password) => {
-        const url = `http://0.0.0.0:8000/api/`;
+        const url = `http://0.0.0.0:8000/api`;
         try {
-            const response = await axios.post(`${url}/signup`, { username, email, password });
+            const response = await axios.post(`${url}/signup/`, { username, email, password });
             console.log('Register attempt: ', response);
             return response.data;
         } catch (error) {
